@@ -9,11 +9,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import Stack from '@mui/material/Stack';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import '../index.css';
 
-const pages = ['Home', 'FAQs', 'About-Us', 'Contact-Us'];
+const pages = ['Password-Entropy', 'Examples', 'Contact-Me'];
 
 const Navbar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -26,7 +25,7 @@ const Navbar = () => {
     };
 
     return (
-        <AppBar position="sticky" style={{ backgroundColor: '#FF7A85' }} elevation={0}>
+        <AppBar position="static" style={{ backgroundColor: 'rgba(184, 214, 204, 0.26)' }} elevation={0}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -35,15 +34,16 @@ const Navbar = () => {
                         component="a"
                         href="/"
                         sx={{
-                            mr: 2,
+                            mr: 10,
                             display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Nunito',
+                            fontStyle: 'normal',
                             fontWeight: 800,
                             color: 'inherit',
                             textDecoration: 'none',
                         }}
                     >
-                        Short.ly
+                        UNLOCK
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -76,7 +76,7 @@ const Navbar = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <Link to={page} className="Link" >
+                                <Link to={'#'+ page} className="Link" >
                                     <MenuItem key={page} onClick={handleCloseNavMenu} style={{ textTransform: 'none' }}>
                                         <Typography textAlign="center" style={{ color: 'black' }}>{page}</Typography>
                                     </MenuItem>
@@ -93,17 +93,18 @@ const Navbar = () => {
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
-                            fontFamily: 'Poppins',
-                            fontWeight: 700,
+                            fontFamily: 'Nunito',
+                            fontStyle: 'normal',
+                            fontWeight: 800,
                             color: 'inherit',
                             textDecoration: 'none',
                         }}
                     >
-                        Short.ly
+                        UNLOCK
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
                         {pages.map((page) => (
-                            <Link to={page} className="Link" >
+                            <Link to={'#'+ page} className="Link" >
                                 <Button
                                     key={page}
                                     onClick={handleCloseNavMenu}
@@ -114,9 +115,9 @@ const Navbar = () => {
                                         display: 'block',
                                         textTransform: 'none',
 
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Nunito',
                                         fontStyle: 'normal',
-                                        fontWeight: 700,
+                                        fontWeight: 800,
                                         fontSize: '16px'
                                     }}
                                 >
@@ -125,45 +126,6 @@ const Navbar = () => {
                             </Link>
                         ))}
                     </Box>
-
-                    <Stack direction="row" sx={{
-                        flexGrow: 0,
-                        '@media (max-width:780px)': {
-                            display: 'none',
-                        }
-                    }}>
-                        <Link to="/Login" className='Link'>
-                            <Button
-                                sx={{
-                                    my: 1, mr: 3, color: 'white', display: 'block', textTransform: 'none', fontFamily: 'Poppins',
-                                    fontStyle: 'normal',
-                                    fontWeight: 700,
-                                    fontSize: '16px'
-                                }}
-                            >
-                                Login
-                            </Button>
-                        </Link>
-
-                        <Link to="/Signup" className='Link'>
-                            <Button
-                                sx={{
-                                    my: 1, mr: 3,
-                                    display: 'block',
-                                    textTransform: 'none',
-                                    fontFamily: 'Poppins',
-                                    fontStyle: 'normal',
-                                    fontWeight: 700,
-                                    fontSize: '16px',
-                                    backgroundColor: '#ffffff',
-                                    color: '#FF525D',
-                                    "&:hover": { backgroundColor: "#ffffff" },
-                                }}
-                            >
-                                Sign Up
-                            </Button>
-                        </Link>
-                    </Stack>
                 </Toolbar>
             </Container>
         </AppBar >
