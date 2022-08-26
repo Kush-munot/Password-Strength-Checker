@@ -90,7 +90,7 @@ const Navbar = () => {
                         component="a"
                         href=""
                         sx={{
-                            mr: 2,
+                            mr: 10,
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
                             fontFamily: 'Nunito',
@@ -102,7 +102,7 @@ const Navbar = () => {
                     >
                         UNLOCK
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'left' }}>
                         {pages.map((page) => (
                             <Link to={'#'+ page} className="Link" >
                                 <Button
