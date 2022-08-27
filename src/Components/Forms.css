@@ -55,8 +55,7 @@ input:invalid[focused="true"] ~ span{
 @media only screen and (max-width:780px){
     input{
         position: relative;
-        left: 5%;
-        width:80%;
+        width:30%;
     }
     .formInput{
         display: flex;

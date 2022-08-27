@@ -84,7 +84,7 @@ const FormPage = () => {
 
     return (
         <div>
-            <Grid 
+            <Grid
                 sx={{
                     margin: '0',
                     backgroundImage: { img },
@@ -98,24 +98,33 @@ const FormPage = () => {
                     position: 'relative',
                     top: 70,
                     left: '15%',
-                    borderRadius: '50px'
+                    borderRadius: '50px',
+                    '@media (max-width:780px)': {
+                        height: '600px',
+                        position: 'relative',
+                        left: '1%',
+                    }
                 }}>
                     <Grid item md={9} xs={16} sx={{
                         height: '100%',
                         marginLeft: '50px',
                         marginTop: '40px',
+                        '@media (max-width:780px)': {
+                            marginLeft: '20px',
+                            marginTop: '40px',
+                        }
                     }}>
                         <Typography sx={{
                             width: '100%',
                             height: '100px',
-                            
+
                             fontFamily: 'Nunito',
                             fontStyle: 'normal',
                             fontWeight: 800,
                             fontSize: '38px',
                             lineHeight: '65px',
                             textAlign: 'left',
-                            letterSpacing: '-0.03em',                            
+                            letterSpacing: '-0.03em',
                             color: '#FFFFFF',
                         }}>
                             Password Strength Checker
@@ -151,13 +160,13 @@ const FormPage = () => {
                     </Grid>
                     <Grid item md={6} xs={16} sx={{
                         height: '100%',
-                        width:'100%',
+                        width: '100%',
                     }}>
                         <Lottie options={defaultOptions}
                             height='70%'
                             width='100%'
                             style={{
-                                marginTop:'30%',
+                                marginTop: '30%',
                             }}
                         />
                     </Grid>
