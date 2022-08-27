@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-import { Button, Grid, Typography, } from '@mui/material';
+import { Grid, Typography, } from '@mui/material';
 import img from '../Assets/bg-image.png'
 import FormInput from './FormInput';
 import * as animationData from '../Assets/Lottie Files/Password2.json'
 import Lottie from 'react-lottie';
+import PasswordEntropy from './PasswordEntropy';
+import Examples from './Examples';
 
 const FormPage = () => {
 
@@ -243,6 +245,8 @@ const FormPage = () => {
                     </Grid>
                 </Grid>
             </Grid>
+            <PasswordEntropy/>
+            <Examples/>
         </div>
     )
 }
