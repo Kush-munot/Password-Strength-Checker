@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Grid, Typography, } from '@mui/material';
+import { Button, Grid, Typography, } from '@mui/material';
 import img from '../Assets/bg-image.png'
 import FormInput from './FormInput';
 import * as animationData from '../Assets/Lottie Files/Password2.json'
@@ -90,6 +90,12 @@ const FormPage = () => {
                     backgroundImage: { img },
                     height: '700px',
                     width: '1000px',
+                    '@media (max-width:780px)': {
+                        position: 'relative',
+                        left: '5%',
+                        width: '90%',
+                        height: '900px',
+                    }
                 }}
             >
                 <Grid container columns={16} sx={{
@@ -101,6 +107,7 @@ const FormPage = () => {
                     borderRadius: '50px',
                     '@media (max-width:780px)': {
                         height: '600px',
+                        width: '100%',
                         position: 'relative',
                         left: '1%',
                     }
@@ -117,7 +124,6 @@ const FormPage = () => {
                         <Typography sx={{
                             width: '100%',
                             height: '100px',
-
                             fontFamily: 'Nunito',
                             fontStyle: 'normal',
                             fontWeight: 800,
@@ -126,6 +132,12 @@ const FormPage = () => {
                             textAlign: 'left',
                             letterSpacing: '-0.03em',
                             color: '#FFFFFF',
+                            '@media (max-width:780px)': {
+                                width: '90%',
+                                height: '100px',
+                                fontSize: '28px',
+                                lineHeight: '45px',
+                            }
                         }}>
                             Password Strength Checker
                         </Typography>
@@ -139,7 +151,7 @@ const FormPage = () => {
                                     onChange={onChange}
                                 />
                             ))}
-                            <button style={{
+                            <Button sx={{
                                 width: '40%',
                                 height: '45px',
                                 padding: '0px',
@@ -152,22 +164,28 @@ const FormPage = () => {
                                 cursor: 'pointer',
                                 marginTop: '15px',
                                 marginBottom: '30px',
+                                textTransform:'none',
+                                '@media (max-width:780px)': {
+                                    width: '60%',
+                                    height: '45px',
+                                }
 
                             }}>
                                 Check Strength 💪
-                            </button>
+                            </Button>
                         </form>
                     </Grid>
                     <Grid item md={6} xs={16} sx={{
                         height: '100%',
-                        width: '100%',
+                        width: '100%', 
+                        marginTop: '10%',                       
+                        '@media (max-width:780px)': {
+                            display:'none',
+                        }
                     }}>
                         <Lottie options={defaultOptions}
                             height='70%'
                             width='100%'
-                            style={{
-                                marginTop: '30%',
-                            }}
                         />
                     </Grid>
                 </Grid>

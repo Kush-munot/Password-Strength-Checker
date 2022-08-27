@@ -13,8 +13,8 @@ input{
 }
 
 ::placeholder { 
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 600;
     color: white;
   }
 
@@ -33,7 +33,7 @@ input[type=number] {
 
 label{
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     color: #ffff;
 }
 
@@ -55,7 +55,7 @@ input:invalid[focused="true"] ~ span{
 @media only screen and (max-width:780px){
     input{
         position: relative;
-        width:30%;
+        width:85%;
     }
     .formInput{
         display: flex;
