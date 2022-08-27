@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Password-Strength-Checker/static/css/main.5ea0be67.css",
+    "main.js": "/Password-Strength-Checker/static/js/main.4469eca6.js",
+    "static/media/bg-image.png": "/Password-Strength-Checker/static/media/bg-image.5233ddc8be2279ec1e7e.png",
+    "index.html": "/Password-Strength-Checker/index.html",
+    "main.5ea0be67.css.map": "/Password-Strength-Checker/static/css/main.5ea0be67.css.map",
+    "main.4469eca6.js.map": "/Password-Strength-Checker/static/js/main.4469eca6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ea0be67.css",
+    "static/js/main.4469eca6.js"
+  ]
+}
