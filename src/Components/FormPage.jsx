@@ -64,42 +64,49 @@ const FormPage = () => {
         /* ONLY DIGITS Condition */
         if (lowerCaseCharacters === 0 && upperCaseCharacters === 0 && specialCharacters === 0 && digits >= 1) {
             R = 10;
-            console.log(R, L);
         } /* ONLY Lowercase Condition */
         else if (lowerCaseCharacters >= 1 && upperCaseCharacters === 0 && specialCharacters === 0 && digits === 0) {
             R = 26;
-            console.log(R, L);
         } /* ONLY Uppercase Condition */
         else if (lowerCaseCharacters === 0 && upperCaseCharacters >= 1 && specialCharacters === 0 && digits === 0) {
             R = 26;
-            console.log(R, L);
         }/* ONLY Special Characters Condition */
         else if (lowerCaseCharacters === 0 && upperCaseCharacters === 0 && specialCharacters >= 0 && digits === 0) {
             R = 32;
-            console.log(R, L);
-        } /* ONLY Lowercase + Uppercase Condition */
-        else if (lowerCaseCharacters >= 1 && upperCaseCharacters >= 1 && specialCharacters === 0 && digits === 0) {
-            R = 52;
-            console.log(R, L);
-        } /* ONLY Alphanumeric Condition */
+        }/* ONLY DIGITS + Lowercase Condition */
         else if (lowerCaseCharacters >= 1 && upperCaseCharacters === 0 && specialCharacters === 0 && digits >= 1) {
             R = 36;
-            console.log(R, L);
+        } /* ONLY DIGITS + Uppercase Condition */
+        else if (lowerCaseCharacters === 0 && upperCaseCharacters >= 1 && specialCharacters === 0 && digits >= 1) {
+            R = 36;
+        } /* ONLY DIGITS + Special Chars Condition */
+        else if (lowerCaseCharacters === 0 && upperCaseCharacters === 0 && specialCharacters >= 1 && digits >= 1) {
+            R = 42;
+        }/* ONLY Lowercase + Uppercase Condition */
+        else if (lowerCaseCharacters >= 1 && upperCaseCharacters >= 1 && specialCharacters === 0 && digits === 0) {
+            R = 52;
         }/* ONLY Alphanumeric + Uppercase Condition */
         else if (lowerCaseCharacters >= 1 && upperCaseCharacters >= 1 && specialCharacters === 0 && digits >= 1) {
             R = 62;
-            console.log(R, L);
         }/* ONLY Alphanumeric + Uppercase + Special Symbols Condition */
         else if (lowerCaseCharacters >= 1 && upperCaseCharacters >= 1 && specialCharacters >= 1 && digits >= 1) {
             R = 94;
-            console.log(R, L);
+        } else {
+            R = 40;
         }
-
-        /* console.log(L);
-        console.log(lowerCaseCharacters);
-        console.log(upperCaseCharacters);
-        console.log(digits);
-        console.log(specialCharacters); */
+        console.log(R, L);
+        console.log((L * Math.log2(R)).toFixed(3));
+        var ans = (L * Math.log2(R)).toFixed(3);
+        var s;
+        document.getElementById("ans").innerHTML = "Your Password Strength is - " + (ans);
+        if (ans < 35) {
+            s = " Weak "
+        } else if (ans >= 35 && ans <= 75) {
+            s = " Medium "
+        } else if (ans > 75) {
+            s = " Strong "
+        }
+        document.getElementById("strength").innerHTML = "Your Password is - " + s;
     }
 
     const onChange = (e) => {
@@ -121,7 +128,7 @@ const FormPage = () => {
                 sx={{
                     margin: '0',
                     backgroundImage: { img },
-                    height: '700px',
+                    height: '850px',
                     width: '1000px',
                     '@media (max-width:780px)': {
                         position: 'relative',
@@ -133,7 +140,7 @@ const FormPage = () => {
             >
                 <Grid container columns={16} sx={{
                     backgroundColor: 'rgba(184, 214, 204, 0.26)',
-                    height: '600px',
+                    height: '740px',
                     position: 'relative',
                     top: 70,
                     left: '15%',
@@ -201,6 +208,25 @@ const FormPage = () => {
                                 Check Strength 💪
                             </button>
                         </form>
+
+                        <p id="ans" style={{
+                            fontFamily: 'Nunito',
+                            fontStyle: 'normal',
+                            fontWeight: 800,
+                            fontSize: '28px',
+                            textAlign: 'left',
+                            letterSpacing: '-0.03em',
+                            color: '#FFFFFF',
+                        }}></p>
+                        <p id="strength" style={{
+                            fontFamily: 'Nunito',
+                            fontStyle: 'normal',
+                            fontWeight: 800,
+                            fontSize: '28px',
+                            textAlign: 'left',
+                            letterSpacing: '-0.03em',
+                            color: '#21E1E1',
+                        }}></p>
                     </Grid>
                     <Grid item md={6} xs={16} sx={{
                         height: '100%',
@@ -211,7 +237,7 @@ const FormPage = () => {
                         }
                     }}>
                         <Lottie options={defaultOptions}
-                            height='70%'
+                            height='57%'
                             width='100%'
                         />
                     </Grid>
