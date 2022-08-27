@@ -6,6 +6,7 @@ import * as animationData from '../Assets/Lottie Files/Password2.json'
 import Lottie from 'react-lottie';
 import PasswordEntropy from './PasswordEntropy';
 import Examples from './Examples';
+import ContactMe from './ContactMe';
 
 const FormPage = () => {
 
@@ -247,6 +248,7 @@ const FormPage = () => {
             </Grid>
             <PasswordEntropy/>
             <Examples/>
+            <ContactMe/>
         </div>
     )
 }
