@@ -141,7 +141,7 @@ const FormPage = () => {
                 }}
             >
                 <Grid container columns={16} sx={{
-                    backgroundColor: 'rgba(184, 214, 204, 0.26)',
+                    backgroundColor: 'rgba(184, 214, 204, 0.16)',
                     height: '740px',
                     position: 'relative',
                     top: 70,

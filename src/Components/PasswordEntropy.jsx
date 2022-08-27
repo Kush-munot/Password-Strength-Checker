@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import React from 'react'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -28,10 +28,13 @@ const rows = [
 
 const PasswordEntropy = () => {
     return (
-        <div id='Password-Entropy' style={{
+        <Box id='Password-Entropy' sx={{
             backgroundColor: '#ffff',
             padding: '30px 150px',
             textAlign: 'left',
+            '@media (max-width:780px)': {
+                padding: 0,
+            }
         }}>
             <Typography sx={{
                 width: '100%',
@@ -44,10 +47,7 @@ const PasswordEntropy = () => {
                 letterSpacing: '-0.01em',
                 color: '#1A1D71',
                 '@media (max-width:780px)': {
-                    width: '90%',
-                    height: '100px',
-                    fontSize: '28px',
-                    lineHeight: '45px',
+                    width: '100%',
                 }
             }}>
                 Password Entropy
@@ -65,9 +65,9 @@ const PasswordEntropy = () => {
                 color: '#1A1D71',
                 '@media (max-width:780px)': {
                     width: '90%',
-                    height: '100px',
+                    height: '100%',
                     fontSize: '28px',
-                    lineHeight: '45px',
+                    marginLeft:'5%',
                 }
             }}>
                 Password Entropy signifies a measure of password strength, i.e., how effective a password is against adversaries who try to guess it or use a brute-force attack.
@@ -87,9 +87,9 @@ const PasswordEntropy = () => {
                 marginTop: '60px',
                 '@media (max-width:780px)': {
                     width: '90%',
-                    height: '100px',
+                    height: '100%',
                     fontSize: '28px',
-                    lineHeight: '45px',
+                    marginLeft:'5%',
                 }
             }}>
                 For each common symbol type (lower case letters, upper case letters, numbers, etc.), enter how many characters of that type there are in your password. The calculator does not require you to enter the password - you're 100% safe😊😇🥳
@@ -108,9 +108,9 @@ const PasswordEntropy = () => {
                 marginTop: '30px',
                 '@media (max-width:780px)': {
                     width: '90%',
-                    height: '100px',
+                    height: '100%',
                     fontSize: '28px',
-                    lineHeight: '45px',
+                    marginLeft:'5%',
                 }
             }}>
                 Here's a mathematical recipe for how to calculate password entropy:
@@ -127,9 +127,9 @@ const PasswordEntropy = () => {
                 color: '#21E1E1',
                 '@media (max-width:780px)': {
                     width: '90%',
-                    height: '100px',
+                    height: '100%',
                     fontSize: '28px',
-                    lineHeight: '45px',
+                    marginLeft:'5%',
                 }
             }}>
                 Entropy = Length Of Password * ( Log base 2( R )) where R is The Pool Size.
@@ -160,7 +160,7 @@ const PasswordEntropy = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-        </div>
+        </Box>
     )
 }
 
