@@ -61,6 +61,39 @@ const FormPage = () => {
         var L = lowerCaseCharacters + upperCaseCharacters + digits + specialCharacters;
         var R = 0;
 
+        /* ONLY DIGITS Condition */
+        if (lowerCaseCharacters === 0 && upperCaseCharacters === 0 && specialCharacters === 0 && digits >= 1) {
+            R = 10;
+            console.log(R, L);
+        } /* ONLY Lowercase Condition */
+        else if (lowerCaseCharacters >= 1 && upperCaseCharacters === 0 && specialCharacters === 0 && digits === 0) {
+            R = 26;
+            console.log(R, L);
+        } /* ONLY Uppercase Condition */
+        else if (lowerCaseCharacters === 0 && upperCaseCharacters >= 1 && specialCharacters === 0 && digits === 0) {
+            R = 26;
+            console.log(R, L);
+        }/* ONLY Special Characters Condition */
+        else if (lowerCaseCharacters === 0 && upperCaseCharacters === 0 && specialCharacters >= 0 && digits === 0) {
+            R = 32;
+            console.log(R, L);
+        } /* ONLY Lowercase + Uppercase Condition */
+        else if (lowerCaseCharacters >= 1 && upperCaseCharacters >= 1 && specialCharacters === 0 && digits === 0) {
+            R = 52;
+            console.log(R, L);
+        } /* ONLY Alphanumeric Condition */
+        else if (lowerCaseCharacters >= 1 && upperCaseCharacters === 0 && specialCharacters === 0 && digits >= 1) {
+            R = 36;
+            console.log(R, L);
+        }/* ONLY Alphanumeric + Uppercase Condition */
+        else if (lowerCaseCharacters >= 1 && upperCaseCharacters >= 1 && specialCharacters === 0 && digits >= 1) {
+            R = 62;
+            console.log(R, L);
+        }/* ONLY Alphanumeric + Uppercase + Special Symbols Condition */
+        else if (lowerCaseCharacters >= 1 && upperCaseCharacters >= 1 && specialCharacters >= 1 && digits >= 1) {
+            R = 94;
+            console.log(R, L);
+        }
 
         /* console.log(L);
         console.log(lowerCaseCharacters);
@@ -151,8 +184,8 @@ const FormPage = () => {
                                     onChange={onChange}
                                 />
                             ))}
-                            <Button sx={{
-                                width: '40%',
+                            <button style={{
+                                width: '50%',
                                 height: '45px',
                                 padding: '0px',
                                 border: 'none',
@@ -164,23 +197,17 @@ const FormPage = () => {
                                 cursor: 'pointer',
                                 marginTop: '15px',
                                 marginBottom: '30px',
-                                textTransform:'none',
-                                '@media (max-width:780px)': {
-                                    width: '60%',
-                                    height: '45px',
-                                }
-
                             }}>
                                 Check Strength 💪
-                            </Button>
+                            </button>
                         </form>
                     </Grid>
                     <Grid item md={6} xs={16} sx={{
                         height: '100%',
-                        width: '100%', 
-                        marginTop: '10%',                       
+                        width: '100%',
+                        marginTop: '10%',
                         '@media (max-width:780px)': {
-                            display:'none',
+                            display: 'none',
                         }
                     }}>
                         <Lottie options={defaultOptions}
