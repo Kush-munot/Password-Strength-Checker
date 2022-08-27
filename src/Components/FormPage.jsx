@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Grid, Typography, } from '@mui/material';
 import img from '../Assets/bg-image.png'
 import FormInput from './FormInput';
-import * as animationData from '../Assets/Lottie Files/Password1.json'
+import * as animationData from '../Assets/Lottie Files/Password2.json'
 import Lottie from 'react-lottie';
 
 const FormPage = () => {
@@ -84,12 +84,12 @@ const FormPage = () => {
 
     return (
         <div>
-            <Grid
+            <Grid 
                 sx={{
                     margin: '0',
                     backgroundImage: { img },
                     height: '700px',
-                    width: '1100px',
+                    width: '1000px',
                 }}
             >
                 <Grid container columns={16} sx={{
@@ -97,10 +97,10 @@ const FormPage = () => {
                     height: '600px',
                     position: 'relative',
                     top: 70,
-                    left: '160px',
+                    left: '15%',
                     borderRadius: '50px'
                 }}>
-                    <Grid item md={10} xs={16} sx={{
+                    <Grid item md={9} xs={16} sx={{
                         height: '100%',
                         marginLeft: '50px',
                         marginTop: '40px',
@@ -154,9 +154,12 @@ const FormPage = () => {
                         width:'100%',
                     }}>
                         <Lottie options={defaultOptions}
-                        height={250}
-                        width='28%'
-                    />
+                            height='70%'
+                            width='100%'
+                            style={{
+                                marginTop:'30%',
+                            }}
+                        />
                     </Grid>
                 </Grid>
             </Grid>
