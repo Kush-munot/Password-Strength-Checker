@@ -101,15 +101,15 @@ const FormPage = () => {
         console.log((L * Math.log2(R)).toFixed(3));
         var ans = (L * Math.log2(R)).toFixed(3);
         var s;
-        document.getElementById("ans").innerHTML = "Your Password Strength is - " + (ans);
+        document.getElementById("ans").innerHTML = "Your Password Entropy is " + (ans);
         if (ans < 35) {
-            s = " Weak "
+            s = "Weak "
         } else if (ans >= 35 && ans <= 75) {
-            s = " Medium "
+            s = "Medium "
         } else if (ans > 75) {
-            s = " Strong "
+            s = "Strong "
         }
-        document.getElementById("strength").innerHTML = "Your Password is - " + s;
+        document.getElementById("strength").innerHTML = "Your Password Strength is " + s;
     }
 
     const onChange = (e) => {
@@ -246,9 +246,9 @@ const FormPage = () => {
                     </Grid>
                 </Grid>
             </Grid>
-            <PasswordEntropy/>
-            <Examples/>
-            <ContactMe/>
+            <PasswordEntropy />
+            <Examples />
+            <ContactMe />
         </div>
     )
 }
